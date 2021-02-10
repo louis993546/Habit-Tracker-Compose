@@ -1,5 +1,6 @@
 package com.louis993546.habittracker.model
 
+import androidx.compose.ui.graphics.Color
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
@@ -27,14 +28,11 @@ typealias Count = Int
 
 inline class ID(val id: String)
 
-// TODO I need a better color container
-data class Color(val r: Int, val g: Int, val b: Int)
-
 object Dummy {
     val habit = Habit(
         id = ID("id"),
         name = "name",
-        color = Color(100, 100, 100),
+        color = Color(200, 200, 200),
         createdAt = Clock.System.now(),
         type = Habit.Type.MoreThan,
         goal = 1,

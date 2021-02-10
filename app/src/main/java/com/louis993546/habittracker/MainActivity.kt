@@ -11,6 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.louis993546.habittracker.model.Dummy
 import com.louis993546.habittracker.ui.component.HabitCard
 import com.louis993546.habittracker.ui.theme.HabitTrackerTheme
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,16 +32,20 @@ class MainActivity : AppCompatActivity() {
 fun HabitList(modifier: Modifier = Modifier) {
     LazyColumn(modifier = modifier) {
         this.items(Dummy.habits) {
-            HabitCard(habit = it, onClick = { /*TODO*/ })
+            HabitCard(
+                habit = it,
+                onPlusClick = { Timber.tag("Habit").d("onPlusClick") }, // TODO not working
+                onClick = { Timber.tag("Habit").d("onClick") }
+            )
         }
     }
 }
 
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview() {
-//    HabitTrackerTheme {
-//        Greeting("Android")
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    HabitTrackerTheme {
+        HabitList()
+    }
+}
+
