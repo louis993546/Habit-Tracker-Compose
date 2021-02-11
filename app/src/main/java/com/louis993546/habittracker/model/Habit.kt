@@ -40,5 +40,5 @@ object Dummy {
         history = emptyMap()
     )
 
-    val habits = (0..100).map { habit }
+    val habits: List<Habit> = (0..100).map { habit }
 }
