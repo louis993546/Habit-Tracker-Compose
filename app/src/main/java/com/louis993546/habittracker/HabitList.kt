@@ -30,10 +30,10 @@ fun HabitList(modifier: Modifier = Modifier, navController: NavController) {
 }
 
 // TODO how to provide a fake nav controller?
-//@Preview()
-//@Composable
-//fun HabitListPreview() {
+// @Preview()
+// @Composable
+// fun HabitListPreview() {
 //    HabitTrackerTheme {
 //        HabitList(navController = navController)
 //    }
-//}
+// }
