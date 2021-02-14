@@ -3,6 +3,7 @@ package com.louis993546.habittracker
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun HabitList(modifier: Modifier = Modifier) {
     LazyColumn(modifier = modifier) {
-        this.items(Dummy.habits) {
+        items(items = Dummy.habits) {
             HabitCard(
                 habit = it,
                 onPlusClick = { Timber.tag("Habit").d("onPlusClick") }, // TODO not working
